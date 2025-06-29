@@ -14,7 +14,7 @@ st.set_page_config(page_title="📈 Dhaka Stock Market", layout="wide")
 # ---- Load data ----
 @st.cache_data
 def load_vis_data():
-    df = pd.read_csv("D:\CODING\WP\cleaned_sorted_dse_data_3.csv", parse_dates=["DATE"])
+    df = pd.read_csv("cleaned_sorted_dse_data_3.csv", parse_dates=["DATE"])
     df["MONTH"] = df["DATE"].dt.month
     df["YEAR_MONTH"] = df["DATE"].dt.to_period("M").astype(str)
     return df
@@ -22,10 +22,10 @@ def load_vis_data():
 df_vis = load_vis_data()
 
 # Load encoding and model
-with open("D:\CODING\WP\company_encoding.json", "r") as f:
+with open("company_encoding.json", "r") as f:
     enc_dict = json.load(f)
 
-model = joblib.load("D:\CODING\WP\lgbm_model.pkl")
+model = joblib.load("lgbm_model.pkl")
 
 # Sidebar
 st.sidebar.title("📂 Navigation")
