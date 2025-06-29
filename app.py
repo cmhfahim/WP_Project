@@ -35,8 +35,8 @@ page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Predi
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
-            <h1 style='color:#4B8BBE;'>📈 Dhaka Stock Market Analysis</h1>
-            <p style='font-size:18px;'>
+            <h1 style='color:black;'>📈 Dhaka Stock Market Analysis</h1>
+            <p style='font-size:18px; color:black;'>
                 Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.
             </p>
         </div>
@@ -54,7 +54,7 @@ if page == "🏠 Home":
         st.success("**Danish Khan**\n\nML Engineer\n\n📧 danish@example.com")
         st.success("**Eliza Sultana**\n\nUI Designer\n\n📧 eliza@example.com")
 
-    st.markdown("<p style='text-align:center; margin-top:50px;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
 
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
