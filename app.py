@@ -46,48 +46,33 @@ if page == "🏠 Home":
     st.markdown("---")
     st.markdown("### 👨‍💻 Team Members")
 
+    card_style = """
+    background-color:#12333A; padding:15px; border-radius:10px;
+    color:#E7D2CC; margin-bottom:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    """
+
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown("""
-        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
-            <strong>Alice Rahman</strong><br>
-            Data Engineer<br>
-            📧 alice@example.com
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"<div style='{card_style}'>"
+                    "<strong>Alice Rahman</strong><br>Data Engineer<br>📧 alice@example.com</div>",
+                    unsafe_allow_html=True)
 
-        st.markdown("""
-        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
-            <strong>Babar Hossain</strong><br>
-            Web Developer<br>
-            📧 babar@example.com
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"<div style='{card_style}'>"
+                    "<strong>Babar Hossain</strong><br>Web Developer<br>📧 babar@example.com</div>",
+                    unsafe_allow_html=True)
 
     with col2:
-        st.markdown("""
-        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
-            <strong>Chandni Akter</strong><br>
-            Analyst<br>
-            📧 chandni@example.com
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"<div style='{card_style}'>"
+                    "<strong>Chandni Akter</strong><br>Analyst<br>📧 chandni@example.com</div>",
+                    unsafe_allow_html=True)
 
-        st.markdown("""
-        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
-            <strong>Danish Khan</strong><br>
-            ML Engineer<br>
-            📧 danish@example.com
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"<div style='{card_style}'>"
+                    "<strong>Danish Khan</strong><br>ML Engineer<br>📧 danish@example.com</div>",
+                    unsafe_allow_html=True)
 
-        st.markdown("""
-        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
-            <strong>Eliza Sultana</strong><br>
-            UI Designer<br>
-            📧 eliza@example.com
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(f"<div style='{card_style}'>"
+                    "<strong>Eliza Sultana</strong><br>UI Designer<br>📧 eliza@example.com</div>",
+                    unsafe_allow_html=True)
 
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
 
