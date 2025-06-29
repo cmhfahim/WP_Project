@@ -150,7 +150,7 @@ elif page == "🚀 Project Journey":
         img.save(buffered, format="PNG")
         return base64.b64encode(buffered.getvalue()).decode()
 
-    image_dir = r"D:\CODING\WP\project_pic"
+    image_dir = r"project_pic"
     valid_exts = (".jpg", ".jpeg", ".png")
 
     image_files = sorted(
