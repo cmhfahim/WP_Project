@@ -32,7 +32,6 @@ st.sidebar.title("📂 Navigation")
 page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey"])
 
 # ---- Home Page ----
-# ---- Home Page ----
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
@@ -54,24 +53,24 @@ if page == "🏠 Home":
     col1, col2 = st.columns(2)
     with col1:
         st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Alice Rahman</strong><br>Data Engineer<br>📧 alice@example.com</div>",
+                    "<strong>Atkia Mona Rahi</strong><br>📧 atkiamona.rahi2003@gmail.com</div>",
                     unsafe_allow_html=True)
 
         st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Babar Hossain</strong><br>Web Developer<br>📧 babar@example.com</div>",
+                    "<strong>Abu Zafor Mohammad Saleh</strong><br>📧 abuzaforsaleh11@gmail.com</div>",
                     unsafe_allow_html=True)
 
     with col2:
         st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Chandni Akter</strong><br>Analyst<br>📧 chandni@example.com</div>",
+                    "<strong>Chowdhury Manjurul Hasan</strong><br>📧 cmhfahim@gmail.com</div>",
                     unsafe_allow_html=True)
 
         st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Danish Khan</strong><br>ML Engineer<br>📧 danish@example.com</div>",
+                    "<strong>Pijush Das</strong><br>📧 pijushdas123@gmail.com</div>",
                     unsafe_allow_html=True)
 
         st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Eliza Sultana</strong><br>UI Designer<br>📧 eliza@example.com</div>",
+                    "<strong>Shafayat Hossain Ornob</strong><br>📧 ornobhossain121@gmail.com</div>",
                     unsafe_allow_html=True)
 
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
