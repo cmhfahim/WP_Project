@@ -50,6 +50,7 @@ if page == "🏠 Home":
     color:#E7D2CC; margin-bottom:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     """
 
+    # Two columns for first 4 members
     col1, col2 = st.columns(2)
     with col1:
         st.markdown(f"<div style='{card_style}'>"
@@ -69,11 +70,17 @@ if page == "🏠 Home":
                     "<strong>Pijush Das</strong><br>📧 pijushdas123@gmail.com</div>",
                     unsafe_allow_html=True)
 
-        st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Shafayat Hossain Ornob</strong><br>📧 ornobhossain121@gmail.com</div>",
-                    unsafe_allow_html=True)
+    # Centered single card for 5th member
+    st.markdown(f"""
+    <div style="display:flex; justify-content:center;">
+        <div style="{card_style}; max-width:400px; text-align:center;">
+            <strong>Shafayat Hossain Ornob</strong><br>📧 ornobhossain121@gmail.com
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
+
 
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
