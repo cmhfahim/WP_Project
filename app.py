@@ -32,6 +32,7 @@ st.sidebar.title("📂 Navigation")
 page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey"])
 
 # ---- Home Page ----
+# ---- Home Page ----
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
@@ -47,12 +48,46 @@ if page == "🏠 Home":
 
     col1, col2 = st.columns(2)
     with col1:
-        st.success("**Alice Rahman**\n\nData Engineer\n\n📧 alice@example.com")
-        st.success("**Babar Hossain**\n\nWeb Developer\n\n📧 babar@example.com")
+        st.markdown("""
+        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
+            <strong>Alice Rahman</strong><br>
+            Data Engineer<br>
+            📧 alice@example.com
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
+            <strong>Babar Hossain</strong><br>
+            Web Developer<br>
+            📧 babar@example.com
+        </div>
+        """, unsafe_allow_html=True)
+
     with col2:
-        st.success("**Chandni Akter**\n\nAnalyst\n\n📧 chandni@example.com")
-        st.success("**Danish Khan**\n\nML Engineer\n\n📧 danish@example.com")
-        st.success("**Eliza Sultana**\n\nUI Designer\n\n📧 eliza@example.com")
+        st.markdown("""
+        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
+            <strong>Chandni Akter</strong><br>
+            Analyst<br>
+            📧 chandni@example.com
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
+            <strong>Danish Khan</strong><br>
+            ML Engineer<br>
+            📧 danish@example.com
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("""
+        <div style="background-color:black; padding:15px; border-radius:10px; color:#E7D2CC; margin-bottom:10px;">
+            <strong>Eliza Sultana</strong><br>
+            UI Designer<br>
+            📧 eliza@example.com
+        </div>
+        """, unsafe_allow_html=True)
 
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
 
