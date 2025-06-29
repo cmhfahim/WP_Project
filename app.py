@@ -48,38 +48,55 @@ if page == "🏠 Home":
     card_style = """
     background-color:#12333A; padding:15px; border-radius:10px;
     color:#E7D2CC; margin-bottom:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    max-width: 280px; text-align: center;
     """
 
-    # Two columns for first 4 members
     col1, col2 = st.columns(2)
     with col1:
-        st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Atkia Mona Rahi</strong><br>📧 atkiamona.rahi2003@gmail.com</div>",
-                    unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="display:flex; justify-content:center;">
+            <div style="{card_style}">
+                <strong>Atkia Mona Rahi</strong><br>📧 atkiamona.rahi2003@gmail.com
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
-        st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Abu Zafor Mohammad Saleh</strong><br>📧 abuzaforsaleh11@gmail.com</div>",
-                    unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="display:flex; justify-content:center;">
+            <div style="{card_style}">
+                <strong>Abu Zafor Mohammad Saleh</strong><br>📧 abuzaforsaleh11@gmail.com
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
     with col2:
-        st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Chowdhury Manjurul Hasan</strong><br>📧 cmhfahim@gmail.com</div>",
-                    unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="display:flex; justify-content:center;">
+            <div style="{card_style}">
+                <strong>Chowdhury Manjurul Hasan</strong><br>📧 cmhfahim@gmail.com
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
-        st.markdown(f"<div style='{card_style}'>"
-                    "<strong>Pijush Das</strong><br>📧 pijushdas123@gmail.com</div>",
-                    unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="display:flex; justify-content:center;">
+            <div style="{card_style}">
+                <strong>Pijush Das</strong><br>📧 pijushdas123@gmail.com
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
 
-    # Centered single card for 5th member
+    # Centered fifth member
     st.markdown(f"""
     <div style="display:flex; justify-content:center;">
-        <div style="{card_style}; max-width:400px; text-align:center;">
+        <div style="{card_style}">
             <strong>Shafayat Hossain Ornob</strong><br>📧 ornobhossain121@gmail.com
         </div>
     </div>
     """, unsafe_allow_html=True)
 
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
+
 
 
 # ---- Visualization Page ----
