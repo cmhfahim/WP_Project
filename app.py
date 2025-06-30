@@ -173,10 +173,22 @@ elif page == "📊 Visualization":
     st.plotly_chart(fig3, use_container_width=True)
 
     st.subheader("📅 Monthly Target Histogram")
-    fig4 = px.histogram(company_df, x="MONTH", color="TARGET",
-                        category_orders={"MONTH": list(range(1, 13))},
-                        color_discrete_map={1: "#2ecc71", 0: "#f1c40f", -1: "#e74c3c"},
-                        title="Target by Month")
+    fig4 = px.histogram(
+        company_df,
+        x="MONTH",
+        color="TARGET",
+        category_orders={"MONTH": list(range(1, 13))},
+        color_discrete_map={1: "#2ecc71", 0: "#f1c40f", -1: "#e74c3c"},
+        title="Target by Month",
+        width=900,
+        height=400
+    )
+
+    fig4.update_layout(
+        bargap=0.15,       # space between bars of different months
+        bargroupgap=0.05   # space between bars of same month but different target classes
+    )
+
     st.plotly_chart(fig4, use_container_width=True)
 
 # ---- Prediction Page ----
