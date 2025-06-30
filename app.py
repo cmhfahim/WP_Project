@@ -75,7 +75,7 @@ if page == "🏠 Home":
     def member_card(name, email):
         return f"""
             <div style="
-                background-color: #474444;
+                background-color: #2b592f;
                 color: white;
                 border-radius: 10px;
                 padding: 15px 20px;
