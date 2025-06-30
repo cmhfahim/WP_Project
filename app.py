@@ -143,7 +143,7 @@ if page == "🏠 Home":
     """, unsafe_allow_html=True)
 
     st.markdown(
-        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
+        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>QuantumTalk</strong></p>",
         unsafe_allow_html=True
     )
 # ---- Visualization Page ----
