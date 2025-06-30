@@ -86,6 +86,7 @@ if page == "🏠 Home":
         font-size: 14px;
         text-align: center;
         margin-bottom: 30px;
+        padding: 0 10px;
     """
 
     col1, col2 = st.columns(2)
@@ -109,8 +110,11 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
+    # New circle for Team name centered below team members
     st.markdown(
-        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
+        f"<div style='max-width: 160px; margin: 40px auto 0 auto;'>"
+        f"<div style='{circle_style.replace('120px', '160px').replace('18px', '22px')}'>Team QuantumTalk</div>"
+        f"</div>",
         unsafe_allow_html=True
     )
 
