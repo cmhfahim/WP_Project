@@ -63,34 +63,51 @@ if page == "🏠 Home":
         {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
     ]
 
-    card_style = """
-        background-color:#12333A;
-        padding:15px;
-        border-radius:10px;
-        color:#E7D2CC;
-        margin-bottom:10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        max-width: 280px;
+    circle_style = """
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle at center, #12333A 0%, #0a2127 70%);
+        border-radius: 50%;
+        color: #E7D2CC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 auto 10px auto;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
         text-align: center;
+        padding: 10px;
+        line-height: 1.2;
+    """
+
+    email_style = """
+        color: #241717;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 30px;
     """
 
     col1, col2 = st.columns(2)
-    with col1:
-        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[0]['name']}</strong><br>📧 {team_members[0]['email']}</div></div>", unsafe_allow_html=True)
-        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[1]['name']}</strong><br>📧 {team_members[1]['email']}</div></div>", unsafe_allow_html=True)
 
-    with col2:
-        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[2]['name']}</strong><br>📧 {team_members[2]['email']}</div></div>", unsafe_allow_html=True)
-        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[3]['name']}</strong><br>📧 {team_members[3]['email']}</div></div>", unsafe_allow_html=True)
+    for i, member in enumerate(team_members[:4]):
+        with (col1 if i % 2 == 0 else col2):
+            st.markdown(
+                f"<div>"
+                f"<div style='{circle_style}'>{member['name']}</div>"
+                f"<div style='{email_style}'>📧 {member['email']}</div>"
+                f"</div>",
+                unsafe_allow_html=True
+            )
 
-    # Fifth member centered
-    st.markdown(f"""
-        <div style="display:flex; justify-content:center;">
-            <div style="{card_style}">
-                <strong>{team_members[4]['name']}</strong><br>📧 {team_members[4]['email']}
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+    # Fifth member centered below columns
+    st.markdown(
+        f"<div style='max-width: 120px; margin: 0 auto;'>"
+        f"<div style='{circle_style}'>{team_members[4]['name']}</div>"
+        f"<div style='{email_style}'>📧 {team_members[4]['email']}</div>"
+        f"</div>",
+        unsafe_allow_html=True
+    )
 
     st.markdown(
         "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
