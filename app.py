@@ -192,7 +192,7 @@ elif page == "📊 Visualization":
     st.plotly_chart(fig4, use_container_width=True)
 
 elif page == "📌 Prediction":
-    st.markdown("<h2 style='text-align:center; font-size:36px; color:#333;'>🔮 Prediction</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:#111111;'>🔮 Prediction</h2>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
     st.markdown("<p style='text-align:center;'>Enter the feature values below:</p>", unsafe_allow_html=True)
