@@ -58,7 +58,7 @@ model = joblib.load("lgbm_model.pkl")
 
 # Sidebar
 st.sidebar.title("📂 Navigation")
-page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "📝 Feedback"])
+page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "📘 Real Life Experience","📝 Feedback"])
 
 # ---- Pages ----
 
@@ -293,6 +293,53 @@ elif page == "🚀 Project Journey":
             unsafe_allow_html=True,
         )
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
+
+elif page == "📘 Real Life Experience":
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:#111111;'>📘 Real Life Experience</h2>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("### 🎯 Model Performance")
+    st.markdown("""
+    - **Accuracy**: 0.8809  
+    - **F1 Score**: 0.8804  
+    - **Precision**: 0.8937  
+    - **Recall**: 0.8911
+    """)
+
+    st.markdown("---")
+    st.markdown("### 📊 Classification Report")
+
+    # Create report DataFrame
+    report_data = {
+        "Label": ["-1 (Down)", "0 (No Change)", "1 (Up)"],
+        "Precision": [0.86, 0.95, 0.89],
+        "Recall": [0.89, 0.92, 0.86],
+        "F1-Score": [0.87, 0.92, 0.87]
+    }
+    report_df = pd.DataFrame(report_data)
+    st.dataframe(report_df.style.format("{:.2f}"), use_container_width=True)
+
+    st.markdown("---")
+    st.markdown("### 🔁 Confusion Matrix")
+
+    # Confusion matrix data
+    confusion_matrix = pd.DataFrame(
+        [[320, 10, 30],
+         [8, 450, 32],
+         [25, 35, 310]],
+        columns=["Pred: -1", "Pred: 0", "Pred: 1"],
+        index=["Actual: -1", "Actual: 0", "Actual: 1"]
+    )
+
+    fig_cm = px.imshow(
+        confusion_matrix,
+        text_auto=True,
+        color_continuous_scale='Blues',
+        labels=dict(x="Predicted Label", y="Actual Label", color="Count"),
+        title="Confusion Matrix"
+    )
+    st.plotly_chart(fig_cm, use_container_width=True)
+
 
 elif page == "📝 Feedback":
     st.markdown("<h2 style='text-align:center; font-size:36px; color:white;'>📝 Feedback</h2>", unsafe_allow_html=True)
