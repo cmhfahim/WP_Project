@@ -193,22 +193,42 @@ elif page == "📊 Visualization":
 
 # ---- Prediction Page ----
 elif page == "📌 Prediction":
-    st.markdown("## 🔮 Prediction")
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:#333;'>🔮 Prediction</h2>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
 
-    st.markdown("Enter the feature values below:")
+    st.markdown("<p style='text-align:center;'>Enter the feature values below:</p>", unsafe_allow_html=True)
 
     company_name = st.selectbox("Select company", sorted(enc_dict.keys()))
     company_id = enc_dict[company_name]
 
-    month = st.selectbox("Month", list(range(1, 13)))
-    openp = st.number_input("OPENP*", min_value=0.0, value=100.0)
-    high = st.number_input("HIGH", min_value=0.0, value=105.0)
-    low = st.number_input("LOW", min_value=0.0, value=95.0)
-    closep = st.number_input("CLOSEP*", min_value=0.0, value=102.0)
-    trade = st.number_input("TRADE", min_value=0, value=500)
-    volume = st.number_input("VOLUME", min_value=0, value=10000)
+    col1, col2 = st.columns(2)
 
-    if st.button("📊 Predict"):
+    with col1:
+        month = st.selectbox("Month", list(range(1, 13)), key="month")
+    with col2:
+        openp = st.number_input("OPENP*", min_value=0.0, value=100.0, key="openp")
+
+    with col1:
+        high = st.number_input("HIGH", min_value=0.0, value=105.0, key="high")
+    with col2:
+        low = st.number_input("LOW", min_value=0.0, value=95.0, key="low")
+
+    with col1:
+        closep = st.number_input("CLOSEP*", min_value=0.0, value=102.0, key="closep")
+    with col2:
+        trade = st.number_input("TRADE", min_value=0, value=500, key="trade")
+
+    with col1:
+        volume = st.number_input("VOLUME", min_value=0, value=10000, key="volume")
+    with col2:
+        st.write("")  # Empty placeholder for alignment
+
+    # Center the Predict button
+    btn_col1, btn_col2, btn_col3 = st.columns([3,1,3])
+    with btn_col2:
+        predict_clicked = st.button("📊 Predict")
+
+    if predict_clicked:
         input_df = pd.DataFrame([{
             "COMPANY_ID": company_id,
             "MONTH": month,
@@ -223,16 +243,24 @@ elif page == "📌 Prediction":
         prediction = model.predict(input_df)[0]
         label_map = {1: "📈 Price Up", 0: "➖ No Change", -1: "📉 Price Down"}
 
-        st.metric("Prediction", label_map[prediction])
-        st.success(f"📊 Model predicts: **{label_map[prediction]}** for {company_name}")
+        # Center prediction results
+        st.markdown(f"""
+            <div style='text-align:center; margin-top: 20px;'>
+                <h3 style='color:green;'>{label_map[prediction]}</h3>
+                <p style='font-weight:bold; font-size:22px;'>📊 Model predicts: <strong>{label_map[prediction]}</strong> for {company_name}</p>
+            </div>
+        """, unsafe_allow_html=True)
 
+        # Center disclaimer
         st.markdown("""
-        ---
-        ⚠️ **Disclaimer**:  
-        This prediction is for **research purposes only**.  
-        Investment decisions should be made independently.  
-        The development team is **not responsible** for any outcomes.
-        """)
+            <div style='text-align:center; margin-top: 15px; color: #555; font-size: 14px;'>
+                <hr style='width:40%; margin: 15px auto; border-color:#ccc;'>
+                ⚠️ <strong>Disclaimer</strong>:<br>
+                This prediction is for <strong>research purposes only</strong>.<br>
+                Investment decisions should be made independently.<br>
+                The development team is <strong>not responsible</strong> for any outcomes.
+            </div>
+        """, unsafe_allow_html=True)
 
 # ---- Project Journey Page ----
 elif page == "🚀 Project Journey":
