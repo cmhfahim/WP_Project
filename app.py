@@ -64,7 +64,7 @@ page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Predi
 def feedback():
     st.header(":mailbox: Please Give your Feedback")
     contact_form = """
-    <form action="https://formsubmit.co/choowdhuryfahim03@gmail.com" method="POST">
+    <form action="https://formsubmit.co/cmhfahim@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
