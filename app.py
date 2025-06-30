@@ -304,13 +304,14 @@ elif page == "📘 Real Life Experience":
         <div style='color:black; font-size:18px;'>
             <h3>🎯 Model Performance</h3>
             <ul>
-                <li><strong>Accuracy</strong>: 0.8809</li>
-                <li><strong>F1 Score</strong>: 0.8804</li>
-                <li><strong>Precision</strong>: 0.8937</li>
-                <li><strong>Recall</strong>: 0.8911</li>
+                <li><strong>Accuracy</strong>: <span style='color:white;'>0.8809</span></li>
+                <li><strong>F1 Score</strong>: <span style='color:white;'>0.8804</span></li>
+                <li><strong>Precision</strong>: <span style='color:white;'>0.8937</span></li>
+                <li><strong>Recall</strong>: <span style='color:white;'>0.8911</span></li>
             </ul>
         </div>
     """, unsafe_allow_html=True)
+
 
     st.markdown("<hr style='border-top: 1px solid #ccc;'>", unsafe_allow_html=True)
 
