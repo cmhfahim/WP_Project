@@ -43,7 +43,7 @@ if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
             <h1 style='color:black; font-size: 70px;'>DeepMarket</h1>
-            <!-- Removed the description and subtitle here -->
+            <h3 style='color:#1b1f3a; font-size: 28px;'>Dhaka Stock Market Analysis and Price Prediction</h3>
         </div>
     """, unsafe_allow_html=True)
 
@@ -127,22 +127,29 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
-    # Add some vertical spacing before description
-    st.markdown("<div style='height:40px'></div>", unsafe_allow_html=True)
+   # Add some vertical spacing before description
+st.markdown("<div style='height:40px'></div>", unsafe_allow_html=True)
 
-    # New Description Section after team members
-    st.markdown("""
-        <div style="text-align: center; max-width: 900px; margin: 0 auto; color:#241717; font-size: 18px; line-height: 1.5;">
-            <p><strong>Dhaka Stock Market Analysis and Price Prediction</strong></p>
-            <p>Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.</p>
-        </div>
-    """, unsafe_allow_html=True)
-
-    # Bottom text (optional)
-    st.markdown(
-        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
-        unsafe_allow_html=True
-    )
+# New Description Section after team members
+st.markdown("""
+    <div style="text-align: center; max-width: 900px; margin: 0 auto; color:#241717; font-size: 18px; line-height: 1.6;">
+        <p>
+            Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.
+        </p>
+        <p>
+            This platform leverages historical data to understand stock behavior and uses machine learning models (LightGBM) to forecast whether a company's stock is likely to go up, stay unchanged, or go down.
+        </p>
+        <p>
+            With rich visualizations, stock-wise filtering, and an interactive prediction interface, users can gain deeper insights into the market's rhythm.
+        </p>
+        <p>
+            Whether you're a curious learner, a data enthusiast, or a researcher, DeepMarket offers a compact yet powerful window into financial analytics.
+        </p>
+        <p>
+            Built using <strong>Python, Streamlit, Plotly, LightGBM, Pandas,</strong> and <strong>Seaborn</strong>, this project aims to bridge the gap between data science and financial decision-making.
+        </p>
+    </div>
+""", unsafe_allow_html=True)
 
 
 # ---- Visualization Page ----
