@@ -40,6 +40,7 @@ st.sidebar.title("📂 Navigation")
 page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey"])
 
 # ---- Home Page ----
+# ---- Home Page ----
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
@@ -54,7 +55,7 @@ if page == "🏠 Home":
     st.markdown("---")
     st.markdown("### 👨‍💻 Our Team")
 
-    # ---- Team Section ----
+    # Modern team card layout
     team_members = [
         {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
         {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
@@ -64,41 +65,41 @@ if page == "🏠 Home":
     ]
 
     team_html = """
-    <style>
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
-        padding: 20px;
-        justify-items: center;
-    }
-    .card {
-        background: linear-gradient(135deg, #12333A, #0F4C75);
-        padding: 15px 20px;
-        border-radius: 12px;
-        color: #E7D2CC;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
-        transition: transform 0.2s;
-    }
-    .card:hover {
-        transform: scale(1.05);
-    }
-    </style>
-    <div class="team-grid">
+        <style>
+        .team-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .team-card {
+            background: linear-gradient(135deg, #12333A, #0F4C75);
+            color: #E7D2CC;
+            border-radius: 12px;
+            padding: 15px 20px;
+            max-width: 240px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .team-card:hover {
+            transform: scale(1.05);
+        }
+        </style>
+        <div class="team-grid">
     """
 
     for member in team_members:
         team_html += f"""
-        <div class="card">
-            <strong>{member['name']}</strong><br>📧 {member['email']}
-        </div>
+            <div class="team-card">
+                <strong>{member['name']}</strong><br>📧 {member['email']}
+            </div>
         """
 
     team_html += "</div>"
 
+    # Render it safely
     st.markdown(team_html, unsafe_allow_html=True)
 
     st.markdown(
