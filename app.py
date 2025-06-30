@@ -18,6 +18,25 @@ st.markdown("""
         .sidebar .sidebar-content {
             font-size: 60px !important;
         }
+        /* Style form inputs and button */
+        form input, form textarea, form button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        form button {
+            background-color: #4B8BBE;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        form button:hover {
+            background-color: #3a6d9c;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -37,32 +56,26 @@ with open("company_encoding.json", "r") as f:
 
 model = joblib.load("lgbm_model.pkl")
 
-# ---- Feedback function ----
-def feedback():
-    st.markdown("<h2 style='text-align:center;'>:mailbox: Please Give your Feedback</h2>", unsafe_allow_html=True)
+# Sidebar
+st.sidebar.title("📂 Navigation")
+page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "📝 Feedback"])
 
-    con_form = """
+# Feedback Page function
+def feedback():
+    st.header(":mailbox: Please Give your Feedback")
+    contact_form = """
     <form action="https://formsubmit.co/choowdhuryfahim03@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="name" placeholder="Your Name" required>
-        <input type="text" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Give your Feedback"></textarea>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Give your Feedback" rows="5"></textarea>
         <button type="submit">Send</button>
     </form>
     """
-    st.markdown(con_form, unsafe_allow_html=True)
+    st.markdown(contact_form, unsafe_allow_html=True)
 
-    # Uncomment below if you want to add custom CSS
-    # def css(fl):
-    #     with open(fl) as f:
-    #         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    # css("style/style.css")
+# ---- Pages ----
 
-# Sidebar
-st.sidebar.title("📂 Navigation")
-page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "✉️ Feedback"])
-
-# ---- Page routing ----
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
@@ -73,19 +86,25 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
-    st.markdown("""<div style='height:40px;'></div>
+    # Description with spacing
+    st.markdown("""
+        <div style='height:40px;'></div>
+
         <div style="text-align: center; max-width: 900px; margin: 0 auto; color:#241717; font-size: 18px; line-height: 1.6;">
             <h2>🌐 Description</h2>
             <p>
                 Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools. This platform leverages historical data to understand stock behavior and uses machine learning models (LightGBM) to forecast whether a company's stock is likely to go up, stay unchanged, or go down. With rich visualizations, stock-wise filtering, and an interactive prediction interface, users can gain deeper insights into the market's rhythm. Whether you're a curious learner, a data enthusiast, or a researcher, DeepMarket offers a compact yet powerful window into financial analytics. Built using <strong>Python, Streamlit, Plotly, LightGBM, Pandas,</strong> and <strong>Seaborn</strong>, this project aims to bridge the gap between data science and financial decision-making.
             </p>
         </div>
+
         <div style='height:60px;'></div>
     """, unsafe_allow_html=True)
 
+    # Team section title
     st.markdown("<h2 style='text-align:center;'>👥 Team Members</h2>", unsafe_allow_html=True)
     st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
 
+    # Member card HTML template
     def member_card(name, email):
         return f"""
             <div style="
@@ -101,6 +120,7 @@ if page == "🏠 Home":
             </div>
         """
 
+    # First 4 members in 2 columns
     col1, col2 = st.columns(2)
 
     with col1:
@@ -111,10 +131,12 @@ if page == "🏠 Home":
         st.markdown(member_card("Abu Zafor Mohammad Saleh", "abuzaforsaleh11@gmail.com"), unsafe_allow_html=True)
         st.markdown(member_card("Pijush Das", "pijushdas123@gmail.com"), unsafe_allow_html=True)
 
+    # Centered last member
     centered_col1, centered_col2, centered_col3 = st.columns([1, 2, 1])
     with centered_col2:
         st.markdown(member_card("Shafayat Hossain Ornob", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
 
+    # Footer
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
 
 elif page == "📊 Visualization":
@@ -155,8 +177,8 @@ elif page == "📊 Visualization":
     )
 
     fig4.update_layout(
-        bargap=0.15,
-        bargroupgap=0.05
+        bargap=0.15,       # space between bars of different months
+        bargroupgap=0.05   # space between bars of same month but different target classes
     )
 
     st.plotly_chart(fig4, use_container_width=True)
@@ -187,10 +209,12 @@ elif page == "📌 Prediction":
     with col2:
         trade = st.number_input("TRADE", min_value=0, value=500, key="trade")
 
+    # Center the last field (VOLUME)
     volume_col1, volume_col2, volume_col3 = st.columns([1, 2, 1])
     with volume_col2:
         volume = st.number_input("VOLUME", min_value=0, value=10000, key="volume")
 
+    # Center the Predict button
     btn_col1, btn_col2, btn_col3 = st.columns([3,1,3])
     with btn_col2:
         predict_clicked = st.button("📊 Predict")
@@ -210,6 +234,7 @@ elif page == "📌 Prediction":
         prediction = model.predict(input_df)[0]
         label_map = {1: "📈 Price Up", 0: "➖ No Change", -1: "📉 Price Down"}
 
+        # Larger font size for result, centered, green color
         st.markdown(f"""
             <div style='text-align:center; margin-top: 20px;'>
                 <h2 style='color:green; font-size: 36px;'>{label_map[prediction]}</h2>
@@ -217,6 +242,7 @@ elif page == "📌 Prediction":
             </div>
         """, unsafe_allow_html=True)
 
+    # Disclaimer at the bottom, always visible, centered, black text
     st.markdown("""
         <div style='text-align:center; margin-top: 60px; color: black; font-size: 16px;'>
             <hr style='width:40%; margin: 15px auto; border-color:#ccc;'>
@@ -277,5 +303,5 @@ elif page == "🚀 Project Journey":
         )
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
 
-elif page == "✉️ Feedback":
+elif page == "📝 Feedback":
     feedback()
