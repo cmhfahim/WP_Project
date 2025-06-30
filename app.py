@@ -329,9 +329,9 @@ elif page == "📘 Real Life Experience":
         </tr>
       </thead>
       <tbody>
-        <tr><td style='border: 1px solid #ddd; padding: 8px;'>-1 (Down)</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.86</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.89</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.87</td></tr>
-        <tr><td style='border: 1px solid #ddd; padding: 8px;'>0 (No Change)</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.95</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.92</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.92</td></tr>
-        <tr><td style='border: 1px solid #ddd; padding: 8px;'>1 (Up)</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.89</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.86</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.87</td></tr>
+        <tr><td style='border: 1px solid #ddd; padding: 8px;'>-1 (Down)</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.86</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.89</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.87</td></tr>
+        <tr><td style='border: 1px solid #ddd; padding: 8px;'>0 (No Change)</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.95</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.92</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.92</td></tr>
+        <tr><td style='border: 1px solid #ddd; padding: 8px;'>1 (Up)</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.89</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.86</td><td style='border: 1px solid #ddd; padding: 8px; color:white;'>0.87</td></tr>
       </tbody>
     </table>
     """
