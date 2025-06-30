@@ -140,7 +140,9 @@ if page == "🏠 Home":
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
 
 elif page == "📊 Visualization":
-    st.markdown("## 📊 Data Visualization")
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:#111111;'>📊 Data Visualization/h2>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+    #st.markdown("## 📊 Data Visualization")
 
     selected_company = st.selectbox("Select a company", sorted(df_vis["TRADING CODE"].unique()))
     company_df = df_vis[df_vis["TRADING CODE"] == selected_company]
