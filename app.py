@@ -75,14 +75,11 @@ if page == "🏠 Home":
         line-height: 1.2;
     """
     st.markdown(
-        f"<div style='max-width: 160px; margin: 0 auto 40px auto;'>"
+        f"<div style='max-width: 160px; margin: 0 auto;'>"
         f"<div style='{circle_style}'>Team QuantumTalk</div>"
         f"</div>",
         unsafe_allow_html=True
     )
-
-    # Add vertical spacing before and after members
-    st.markdown("<div style='margin-top:40px; margin-bottom:40px;'>", unsafe_allow_html=True)
 
     # Team members list
     team_members = [
@@ -93,6 +90,7 @@ if page == "🏠 Home":
         {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
     ]
 
+    # Smaller circles for members
     member_circle_style = circle_style.replace("160px", "120px").replace("22px", "18px").replace("margin: 0 auto 40px auto;", "margin: 0 auto 10px auto;")
 
     email_style = """
@@ -127,13 +125,11 @@ if page == "🏠 Home":
         f"""
         <div style="max-width: 120px; margin: 0 auto 40px auto; text-align:center;">
             <div style="{member_circle_style}">{team_members[4]['name']}</div>
-            <div style="{email_style} max-width:240px; margin-left:auto; margin-right:auto;">📧 {team_members[4]['email']}</div>
+            <div style="{email_style}">📧 {team_members[4]['email']}</div>
         </div>
         """,
         unsafe_allow_html=True
     )
-
-    st.markdown("</div>", unsafe_allow_html=True)  # Close the spacing div
 
     # Bottom text (optional)
     st.markdown(
