@@ -54,7 +54,7 @@ if page == "🏠 Home":
     st.markdown("---")
 
     # Add vertical spacing after the intro block
-    st.markdown("<div style='height:40px'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height:100px'></div>", unsafe_allow_html=True)
 
     # Our Team heading
     st.markdown("### 👨‍💻 Our Team")
