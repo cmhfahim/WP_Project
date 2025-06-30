@@ -14,7 +14,7 @@ st.set_page_config(page_title="📈 DeepMarket", layout="wide")
 st.markdown("""
     <style>
         .sidebar .sidebar-content {
-            font-size: 18px !important;
+            font-size: 30px !important;
         }
     </style>
 """, unsafe_allow_html=True)
