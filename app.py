@@ -191,7 +191,6 @@ elif page == "📊 Visualization":
 
     st.plotly_chart(fig4, use_container_width=True)
 
-# ---- Prediction Page ----
 elif page == "📌 Prediction":
     st.markdown("<h2 style='text-align:center; font-size:36px; color:#333;'>🔮 Prediction</h2>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
@@ -218,10 +217,10 @@ elif page == "📌 Prediction":
     with col2:
         trade = st.number_input("TRADE", min_value=0, value=500, key="trade")
 
-    with col1:
+    # Center the last field (VOLUME)
+    volume_col1, volume_col2, volume_col3 = st.columns([1, 2, 1])
+    with volume_col2:
         volume = st.number_input("VOLUME", min_value=0, value=10000, key="volume")
-    with col2:
-        st.write("")  # Empty placeholder for alignment
 
     # Center the Predict button
     btn_col1, btn_col2, btn_col3 = st.columns([3,1,3])
@@ -243,17 +242,17 @@ elif page == "📌 Prediction":
         prediction = model.predict(input_df)[0]
         label_map = {1: "📈 Price Up", 0: "➖ No Change", -1: "📉 Price Down"}
 
-        # Center prediction results
+        # Larger font size for result, centered, green color
         st.markdown(f"""
             <div style='text-align:center; margin-top: 20px;'>
-                <h3 style='color:green;'>{label_map[prediction]}</h3>
-                <p style='font-weight:bold; font-size:22px;'>📊 Model predicts: <strong>{label_map[prediction]}</strong> for {company_name}</p>
+                <h2 style='color:green; font-size: 36px;'>{label_map[prediction]}</h2>
+                <p style='font-weight:bold; font-size:28px;'>📊 Model predicts: <strong>{label_map[prediction]}</strong> for {company_name}</p>
             </div>
         """, unsafe_allow_html=True)
 
-        # Center disclaimer
+        # Disclaimer in black, centered, bigger font for clarity
         st.markdown("""
-            <div style='text-align:center; margin-top: 15px; color: #555; font-size: 14px;'>
+            <div style='text-align:center; margin-top: 15px; color: black; font-size: 16px;'>
                 <hr style='width:40%; margin: 15px auto; border-color:#ccc;'>
                 ⚠️ <strong>Disclaimer</strong>:<br>
                 This prediction is for <strong>research purposes only</strong>.<br>
