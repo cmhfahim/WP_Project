@@ -106,7 +106,6 @@ if page == "🏠 Home":
         word-wrap: break-word;
     """
 
-
     col1, col2 = st.columns(2)
 
     for i, member in enumerate(team_members[:4]):
