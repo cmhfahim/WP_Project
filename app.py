@@ -256,7 +256,10 @@ elif page == "📌 Prediction":
     """, unsafe_allow_html=True)
 
 elif page == "🚀 Project Journey":
-    st.markdown("## 🛤️ Project Journey")
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:white;'>🛤️ Project Journey< /h2>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    #st.markdown("## 🛤️ Project Journey")
 
     def image_to_base64(img):
         buffered = io.BytesIO()
