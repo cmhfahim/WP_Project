@@ -52,7 +52,34 @@ if page == "🏠 Home":
     """, unsafe_allow_html=True)
 
     st.markdown("---")
+
+    # Our Team heading
     st.markdown("### 👨‍💻 Our Team")
+
+    # Circle for Team QuantumTalk right after heading
+    circle_style = """
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(circle at center, #12333A 0%, #0a2127 70%);
+        border-radius: 50%;
+        color: #E7D2CC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 22px;
+        margin: 0 auto 40px auto;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+        text-align: center;
+        padding: 10px;
+        line-height: 1.2;
+    """
+    st.markdown(
+        f"<div style='max-width: 160px; margin: 0 auto;'>"
+        f"<div style='{circle_style}'>Team QuantumTalk</div>"
+        f"</div>",
+        unsafe_allow_html=True
+    )
 
     # Team members list
     team_members = [
@@ -63,23 +90,8 @@ if page == "🏠 Home":
         {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
     ]
 
-    circle_style = """
-        width: 120px;
-        height: 120px;
-        background: radial-gradient(circle at center, #12333A 0%, #0a2127 70%);
-        border-radius: 50%;
-        color: #E7D2CC;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 18px;
-        margin: 0 auto 10px auto;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-        text-align: center;
-        padding: 10px;
-        line-height: 1.2;
-    """
+    # Smaller circles for members
+    member_circle_style = circle_style.replace("160px", "120px").replace("22px", "18px").replace("margin: 0 auto 40px auto;", "margin: 0 auto 10px auto;")
 
     email_style = """
         color: #241717;
@@ -95,7 +107,7 @@ if page == "🏠 Home":
         with (col1 if i % 2 == 0 else col2):
             st.markdown(
                 f"<div>"
-                f"<div style='{circle_style}'>{member['name']}</div>"
+                f"<div style='{member_circle_style}'>{member['name']}</div>"
                 f"<div style='{email_style}'>📧 {member['email']}</div>"
                 f"</div>",
                 unsafe_allow_html=True
@@ -104,17 +116,15 @@ if page == "🏠 Home":
     # Fifth member centered below columns
     st.markdown(
         f"<div style='max-width: 120px; margin: 0 auto;'>"
-        f"<div style='{circle_style}'>{team_members[4]['name']}</div>"
+        f"<div style='{member_circle_style}'>{team_members[4]['name']}</div>"
         f"<div style='{email_style}'>📧 {team_members[4]['email']}</div>"
         f"</div>",
         unsafe_allow_html=True
     )
 
-    # New circle for Team name centered below team members
+    # Bottom text (optional)
     st.markdown(
-        f"<div style='max-width: 160px; margin: 40px auto 0 auto;'>"
-        f"<div style='{circle_style.replace('120px', '160px').replace('18px', '22px')}'>Team QuantumTalk</div>"
-        f"</div>",
+        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
         unsafe_allow_html=True
     )
 
