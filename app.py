@@ -120,12 +120,17 @@ if page == "🏠 Home":
                 unsafe_allow_html=True
             )
 
-    # Fifth member centered below columns
+    # Fifth member centered below columns with wider email box
     st.markdown(
         f"""
         <div style="max-width: 120px; margin: 0 auto 40px auto; text-align:center;">
             <div style="{member_circle_style}">{team_members[4]['name']}</div>
-            <div style="{email_style}">📧 {team_members[4]['email']}</div>
+            <div style="
+                {email_style}
+                max-width: 240px;
+                margin-left: auto;
+                margin-right: auto;
+            ">📧 {team_members[4]['email']}</div>
         </div>
         """,
         unsafe_allow_html=True
