@@ -14,7 +14,7 @@ st.set_page_config(page_title="📈 DeepMarket", layout="wide")
 st.markdown("""
     <style>
         .sidebar .sidebar-content {
-            font-size: 18px !important;
+            font-size: 60px !important;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -54,7 +54,7 @@ if page == "🏠 Home":
     st.markdown("---")
 
     # Add vertical spacing after the intro block
-    st.markdown("<div style='height:100px'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height:70px'></div>", unsafe_allow_html=True)
 
     # Our Team heading
     st.markdown("### 👨‍💻 Our Team")
