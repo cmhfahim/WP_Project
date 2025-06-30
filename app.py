@@ -250,16 +250,16 @@ elif page == "📌 Prediction":
             </div>
         """, unsafe_allow_html=True)
 
-        # Disclaimer in black, centered, bigger font for clarity
-        st.markdown("""
-            <div style='text-align:center; margin-top: 15px; color: black; font-size: 16px;'>
-                <hr style='width:40%; margin: 15px auto; border-color:#ccc;'>
-                ⚠️ <strong>Disclaimer</strong>:<br>
-                This prediction is for <strong>research purposes only</strong>.<br>
-                Investment decisions should be made independently.<br>
-                The development team is <strong>not responsible</strong> for any outcomes.
-            </div>
-        """, unsafe_allow_html=True)
+    # Disclaimer at the bottom, always visible, centered, black text
+    st.markdown("""
+        <div style='text-align:center; margin-top: 60px; color: black; font-size: 16px;'>
+            <hr style='width:40%; margin: 15px auto; border-color:#ccc;'>
+            ⚠️ <strong>Disclaimer</strong>:<br>
+            This prediction is for <strong>research purposes only</strong>.<br>
+            Investment decisions should be made independently.<br>
+            The development team is <strong>not responsible</strong> for any outcomes.
+        </div>
+    """, unsafe_allow_html=True)
 
 # ---- Project Journey Page ----
 elif page == "🚀 Project Journey":
