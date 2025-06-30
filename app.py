@@ -40,13 +40,12 @@ st.sidebar.title("📂 Navigation")
 page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey"])
 
 # ---- Home Page ----
-# ---- Home Page ----
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
-            <h1 style='color:#0F4C75; font-size: 48px;'>DeepMarket</h1>
-            <h3 style='color:black;'>Dhaka Stock Market Analysis and Price Prediction</h3>
-            <p style='font-size:18px; color:black;'>
+            <h1 style='color:#102542; font-size: 60px;'>DeepMarket</h1>
+            <h3 style='color:#1b1f3a; font-size: 28px;'>Dhaka Stock Market Analysis and Price Prediction</h3>
+            <p style='font-size:20px; color:#333333;'>
                 Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.
             </p>
         </div>
@@ -55,7 +54,7 @@ if page == "🏠 Home":
     st.markdown("---")
     st.markdown("### 👨‍💻 Our Team")
 
-    # Modern team card layout
+    # Team members list
     team_members = [
         {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
         {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
@@ -64,43 +63,34 @@ if page == "🏠 Home":
         {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
     ]
 
-    team_html = """
-        <style>
-        .team-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-        .team-card {
-            background: linear-gradient(135deg, #12333A, #0F4C75);
-            color: #E7D2CC;
-            border-radius: 12px;
-            padding: 15px 20px;
-            max-width: 240px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
-        }
-        .team-card:hover {
-            transform: scale(1.05);
-        }
-        </style>
-        <div class="team-grid">
+    card_style = """
+        background-color:#12333A;
+        padding:15px;
+        border-radius:10px;
+        color:#E7D2CC;
+        margin-bottom:10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        max-width: 280px;
+        text-align: center;
     """
 
-    for member in team_members:
-        team_html += f"""
-            <div class="team-card">
-                <strong>{member['name']}</strong><br>📧 {member['email']}
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[0]['name']}</strong><br>📧 {team_members[0]['email']}</div></div>", unsafe_allow_html=True)
+        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[1]['name']}</strong><br>📧 {team_members[1]['email']}</div></div>", unsafe_allow_html=True)
+
+    with col2:
+        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[2]['name']}</strong><br>📧 {team_members[2]['email']}</div></div>", unsafe_allow_html=True)
+        st.markdown(f"<div style='display:flex; justify-content:center;'><div style='{card_style}'><strong>{team_members[3]['name']}</strong><br>📧 {team_members[3]['email']}</div></div>", unsafe_allow_html=True)
+
+    # Fifth member centered
+    st.markdown(f"""
+        <div style="display:flex; justify-content:center;">
+            <div style="{card_style}">
+                <strong>{team_members[4]['name']}</strong><br>📧 {team_members[4]['email']}
             </div>
-        """
-
-    team_html += "</div>"
-
-    # Render it safely
-    st.markdown(team_html, unsafe_allow_html=True)
+        </div>
+    """, unsafe_allow_html=True)
 
     st.markdown(
         "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
