@@ -58,7 +58,7 @@ model = joblib.load("lgbm_model.pkl")
 
 # Sidebar
 st.sidebar.title("📂 Navigation")
-page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "📘 Real Life Experience","📝 Feedback"])
+page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "📘 Real Life Experience","🚀 Project Journey", "📝 Feedback"])
 
 # ---- Pages ----
 
