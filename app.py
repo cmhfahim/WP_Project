@@ -72,7 +72,7 @@ if page == "🏠 Home":
     st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
 
     # Member card HTML template
-    def member_card(name, role, email):
+    def member_card(name, email):
         return f"""
             <div style="
                 background-color: #2b2b2b;
@@ -83,7 +83,6 @@ if page == "🏠 Home":
                 box-shadow: 0 2px 6px rgba(0,0,0,0.5);
             ">
                 <strong style='font-size:18px;'>{name}</strong><br>
-                <span style='font-size:15px;'>{role}</span><br><br>
                 📧 <a href='mailto:{email}' style='color:#dddddd;'>{email}</a>
             </div>
         """
