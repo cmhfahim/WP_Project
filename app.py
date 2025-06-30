@@ -62,9 +62,7 @@ page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Predi
 
 # Feedback Page function
 def feedback():
-    st.markdown("<h2 style='text-align:center; font-size:36px; color:white;'>📊 :mailbox: Please Give your Feedback</h2>", unsafe_allow_html=True)
-    st.markdown("<br>", unsafe_allow_html=True)
-    #st.header(":mailbox: Please Give your Feedback")
+    st.header(":mailbox: Please Give your Feedback")
     contact_form = """
     <form action="https://formsubmit.co/choowdhuryfahim03@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
