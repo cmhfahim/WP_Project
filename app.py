@@ -317,8 +317,8 @@ elif page == "📘 Real Life Experience":
     }
     report_df = pd.DataFrame(report_data)
 
-    # ✅ Use table instead of dataframe with styling
-    st.table(report_df.style.format("{:.2f}"))
+    # ✅ No styling, just rounded values
+    st.table(report_df.round(2))
 
     st.markdown("---")
     st.markdown("### 🔁 Confusion Matrix")
