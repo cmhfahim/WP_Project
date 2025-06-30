@@ -317,15 +317,25 @@ elif page == "📘 Real Life Experience":
 
     st.markdown("<h3 style='color:black;'>📊 Classification Report</h3>", unsafe_allow_html=True)
 
-    report_data = {
-        "Label": ["-1 (Down)", "0 (No Change)", "1 (Up)"],
-        "Precision": [0.86, 0.95, 0.89],
-        "Recall": [0.89, 0.92, 0.86],
-        "F1-Score": [0.87, 0.92, 0.87]
-    }
-    report_df = pd.DataFrame(report_data)
-
-    st.table(report_df.round(2))  # Plain table with black text
+    # Replace this st.table(...) with the custom HTML table below:
+    html_table = """
+    <table style='width:100%; border-collapse: collapse; color:black; font-size:16px;'>
+      <thead>
+        <tr>
+          <th style='border: 1px solid #ddd; padding: 8px;'>Label</th>
+          <th style='border: 1px solid #ddd; padding: 8px;'>Precision</th>
+          <th style='border: 1px solid #ddd; padding: 8px;'>Recall</th>
+          <th style='border: 1px solid #ddd; padding: 8px;'>F1-Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style='border: 1px solid #ddd; padding: 8px;'>-1 (Down)</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.86</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.89</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.87</td></tr>
+        <tr><td style='border: 1px solid #ddd; padding: 8px;'>0 (No Change)</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.95</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.92</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.92</td></tr>
+        <tr><td style='border: 1px solid #ddd; padding: 8px;'>1 (Up)</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.89</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.86</td><td style='border: 1px solid #ddd; padding: 8px; color:black;'>0.87</td></tr>
+      </tbody>
+    </table>
+    """
+    st.markdown(html_table, unsafe_allow_html=True)
 
     st.markdown("<hr style='border-top: 1px solid #ccc;'>", unsafe_allow_html=True)
     st.markdown("<h3 style='color:black;'>🔁 Confusion Matrix</h3>", unsafe_allow_html=True)
