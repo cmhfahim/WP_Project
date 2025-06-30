@@ -60,20 +60,6 @@ model = joblib.load("lgbm_model.pkl")
 st.sidebar.title("📂 Navigation")
 page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "📝 Feedback"])
 
-# Feedback Page function
-def feedback():
-    st.header(":mailbox: Please Give your Feedback")
-    contact_form = """
-    <form action="https://formsubmit.co/choowdhuryfahim03@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Give your Feedback" rows="5"></textarea>
-        <button type="submit">Send</button>
-    </form>
-    """
-    st.markdown(contact_form, unsafe_allow_html=True)
-
 # ---- Pages ----
 
 if page == "🏠 Home":
@@ -309,4 +295,30 @@ elif page == "🚀 Project Journey":
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
 
 elif page == "📝 Feedback":
-    feedback()
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:#111111;'>📝 Feedback</h2>", unsafe_allow_html=True)
+    st.markdown("<br>", unsafe_allow_html=True)
+
+    st.markdown("""
+        <div style="text-align: center; font-size: 18px; color: #333;">
+            We value your thoughts and suggestions! Please fill out the form below to share your feedback.
+        </div>
+        <br>
+    """, unsafe_allow_html=True)
+
+    contact_form = """
+    <form action="https://formsubmit.co/choowdhuryfahim03@gmail.com" method="POST" style="max-width: 600px; margin: 0 auto;">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Give your Feedback" rows="5" required></textarea>
+        <button type="submit">Send Feedback</button>
+    </form>
+    """
+
+    st.markdown(contact_form, unsafe_allow_html=True)
+
+    st.markdown("""
+        <div style='text-align:center; margin-top: 40px; color: black; font-size: 16px;'>
+            📩 Your feedback helps us improve this platform!
+        </div>
+    """, unsafe_allow_html=True)
