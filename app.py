@@ -54,7 +54,7 @@ if page == "🏠 Home":
     st.markdown("---")
 
     # Add vertical spacing after the intro block
-    #st.markdown("<div style='height:70px'></div>", unsafe_allow_html=True)
+    st.markdown("<div style='height:50px'></div>", unsafe_allow_html=True)
 
 
 
