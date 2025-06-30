@@ -18,6 +18,25 @@ st.markdown("""
         .sidebar .sidebar-content {
             font-size: 60px !important;
         }
+        /* Style form inputs and button */
+        form input, form textarea, form button {
+            width: 100%;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        form button {
+            background-color: #4B8BBE;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        form button:hover {
+            background-color: #3a6d9c;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -39,9 +58,23 @@ model = joblib.load("lgbm_model.pkl")
 
 # Sidebar
 st.sidebar.title("📂 Navigation")
-page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey"])
+page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey", "📝 Feedback"])
 
-#HOME---------
+# Feedback Page function
+def feedback():
+    st.header(":mailbox: Please Give your Feedback")
+    contact_form = """
+    <form action="https://formsubmit.co/choowdhuryfahim03@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Give your Feedback" rows="5"></textarea>
+        <button type="submit">Send</button>
+    </form>
+    """
+    st.markdown(contact_form, unsafe_allow_html=True)
+
+# ---- Pages ----
 
 if page == "🏠 Home":
     st.markdown("""
@@ -106,7 +139,6 @@ if page == "🏠 Home":
     # Footer
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
 
-# ---- Visualization Page ----
 elif page == "📊 Visualization":
     st.markdown("## 📊 Data Visualization")
 
@@ -221,7 +253,6 @@ elif page == "📌 Prediction":
         </div>
     """, unsafe_allow_html=True)
 
-# ---- Project Journey Page ----
 elif page == "🚀 Project Journey":
     st.markdown("## 🛤️ Project Journey")
 
@@ -271,3 +302,6 @@ elif page == "🚀 Project Journey":
             unsafe_allow_html=True,
         )
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
+
+elif page == "📝 Feedback":
+    feedback()
