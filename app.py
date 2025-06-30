@@ -8,8 +8,16 @@ import os
 from PIL import Image
 import joblib
 
+st.set_page_config(page_title="📈 DeepMarket", layout="wide")
 
-st.set_page_config(page_title="📈 Dhaka Stock Market", layout="wide")
+# ---- Custom Sidebar Font Size ----
+st.markdown("""
+    <style>
+        .sidebar .sidebar-content {
+            font-size: 18px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # ---- Load data ----
 @st.cache_data
@@ -35,7 +43,8 @@ page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Predi
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
-            <h1 style='color:black;'>📈 Dhaka Stock Market Analysis</h1>
+            <h1 style='color:#0F4C75; font-size: 48px;'>DeepMarket</h1>
+            <h3 style='color:black;'>Dhaka Stock Market Analysis and Price Prediction</h3>
             <p style='font-size:18px; color:black;'>
                 Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.
             </p>
@@ -43,61 +52,54 @@ if page == "🏠 Home":
     """, unsafe_allow_html=True)
 
     st.markdown("---")
-    st.markdown("### 👨‍💻 Team Members")
+    st.markdown("### 👨‍💻 Our Team")
 
-    card_style = """
-    background-color:#12333A; padding:15px; border-radius:10px;
-    color:#E7D2CC; margin-bottom:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    max-width: 280px; text-align: center;
-    """
+    # Modern Grid Layout for Team Members
+    team_members = [
+        {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
+        {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
+        {"name": "Chowdhury Manjurul Hasan", "email": "cmhfahim@gmail.com"},
+        {"name": "Pijush Das", "email": "pijushdas123@gmail.com"},
+        {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
+    ]
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown(f"""
-        <div style="display:flex; justify-content:center;">
-            <div style="{card_style}">
-                <strong>Atkia Mona Rahi</strong><br>📧 atkiamona.rahi2003@gmail.com
+    st.markdown("""
+        <style>
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+        .card {
+            background: linear-gradient(135deg, #12333A, #0F4C75);
+            padding: 15px 20px;
+            border-radius: 12px;
+            color: #E7D2CC;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        </style>
+        <div class="team-grid">
+    """ + "".join([
+        f"""
+            <div class="card">
+                <strong>{member['name']}</strong><br>📧 {member['email']}
             </div>
-        </div>
-        """, unsafe_allow_html=True)
+        """ for member in team_members
+    ]) + "</div>", unsafe_allow_html=True)
 
-        st.markdown(f"""
-        <div style="display:flex; justify-content:center;">
-            <div style="{card_style}">
-                <strong>Abu Zafor Mohammad Saleh</strong><br>📧 abuzaforsaleh11@gmail.com
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    with col2:
-        st.markdown(f"""
-        <div style="display:flex; justify-content:center;">
-            <div style="{card_style}">
-                <strong>Chowdhury Manjurul Hasan</strong><br>📧 cmhfahim@gmail.com
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-        st.markdown(f"""
-        <div style="display:flex; justify-content:center;">
-            <div style="{card_style}">
-                <strong>Pijush Das</strong><br>📧 pijushdas123@gmail.com
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
-
-    # Centered fifth member
-    st.markdown(f"""
-    <div style="display:flex; justify-content:center;">
-        <div style="{card_style}">
-            <strong>Shafayat Hossain Ornob</strong><br>📧 ornobhossain121@gmail.com
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-    st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumStock</strong></p>", unsafe_allow_html=True)
-
-
+    st.markdown(
+        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
+        unsafe_allow_html=True
+    )
 
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
@@ -140,7 +142,7 @@ elif page == "📌 Prediction":
 
     # Get user inputs
     company_name = st.selectbox("Select company", sorted(enc_dict.keys()))
-    company_id = enc_dict[company_name]  # map to encoded value
+    company_id = enc_dict[company_name]
 
     month = st.selectbox("Month", list(range(1, 13)))
     openp = st.number_input("OPENP*", min_value=0.0, value=100.0)
@@ -150,7 +152,6 @@ elif page == "📌 Prediction":
     trade = st.number_input("TRADE", min_value=0, value=500)
     volume = st.number_input("VOLUME", min_value=0, value=10000)
 
-    # When button is clicked, make prediction
     if st.button("📊 Predict"):
         input_df = pd.DataFrame([{
             "COMPANY_ID": company_id,
@@ -163,7 +164,6 @@ elif page == "📌 Prediction":
             "VOLUME": volume
         }])
 
-        # Predict
         prediction = model.predict(input_df)[0]
         label_map = {1: "📈 Price Up", 0: "➖ No Change", -1: "📉 Price Down"}
 
@@ -180,9 +180,6 @@ elif page == "📌 Prediction":
 
 # ---- Project Journey Page ----
 elif page == "🚀 Project Journey":
-    import streamlit as st
-    from PIL import Image
-    import os
     import io
     import base64
 
@@ -209,7 +206,6 @@ elif page == "🚀 Project Journey":
         if "full_size" not in st.session_state:
             st.session_state.full_size = False
 
-        # --- Buttons centered at top ---
         cols = st.columns(5)
         with cols[1]:
             if st.button("⬅️ Previous"):
@@ -222,7 +218,6 @@ elif page == "🚀 Project Journey":
             if st.button("Next ➡️"):
                 st.session_state.img_index = min(len(image_files) - 1, st.session_state.img_index + 1)
 
-        # --- Show image centered ---
         img_path = os.path.join(image_dir, image_files[st.session_state.img_index])
         img = Image.open(img_path)
 
@@ -236,4 +231,3 @@ elif page == "🚀 Project Journey":
             unsafe_allow_html=True,
         )
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
-
