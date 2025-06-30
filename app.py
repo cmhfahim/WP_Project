@@ -71,24 +71,42 @@ if page == "🏠 Home":
     st.markdown("<h2 style='text-align:center;'>👥 Team Members</h2>", unsafe_allow_html=True)
     st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
 
-    # Team members: 2 columns
+    # Member card HTML template
+    def member_card(name, role, email):
+        return f"""
+            <div style="
+                background-color: #2b2b2b;
+                color: white;
+                border-radius: 10px;
+                padding: 15px 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+            ">
+                <strong style='font-size:18px;'>{name}</strong><br>
+                <span style='font-size:15px;'>{role}</span><br><br>
+                📧 <a href='mailto:{email}' style='color:#dddddd;'>{email}</a>
+            </div>
+        """
+
+    # First 4 members in 2 columns
     col1, col2 = st.columns(2)
 
     with col1:
-        st.success("**Atkia Mona Rahi**\n\nTeam Lead & Analyst\n\n📧 atkiamona.rahi2003@gmail.com")
-        st.success("**Chowdhury Manjurul Hasan**\n\nData Engineer\n\n📧 cmhfahim@gmail.com")
+        st.markdown(member_card("Atkia Mona Rahi", "Team Lead & Analyst", "atkiamona.rahi2003@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Chowdhury Manjurul Hasan", "Data Engineer", "cmhfahim@gmail.com"), unsafe_allow_html=True)
 
     with col2:
-        st.success("**Abu Zafor Mohammad Saleh**\n\nWeb Developer\n\n📧 abuzaforsaleh11@gmail.com")
-        st.success("**Pijush Das**\n\nML Engineer\n\n📧 pijushdas123@gmail.com")
+        st.markdown(member_card("Abu Zafor Mohammad Saleh", "Web Developer", "abuzaforsaleh11@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Pijush Das", "ML Engineer", "pijushdas123@gmail.com"), unsafe_allow_html=True)
 
     # Centered last member
     centered_col1, centered_col2, centered_col3 = st.columns([1, 2, 1])
     with centered_col2:
-        st.success("**Shafayat Hossain Ornob**\n\nUI Designer\n\n📧 ornobhossain121@gmail.com")
+        st.markdown(member_card("Shafayat Hossain Ornob", "UI Designer", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
 
-    # Footer credit
+    # Footer
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
+
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
     st.markdown("## 📊 Data Visualization")
