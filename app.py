@@ -93,13 +93,19 @@ if page == "🏠 Home":
     # Smaller circles for members
     member_circle_style = circle_style.replace("160px", "120px").replace("22px", "18px").replace("margin: 0 auto 40px auto;", "margin: 0 auto 10px auto;")
 
-    email_style = """
+        email_style = """
         color: #241717;
         font-size: 14px;
         text-align: center;
         margin-bottom: 30px;
-        padding: 0 10px;
+        padding: 6px 12px;
+        background-color: #e7d2cc;
+        border-radius: 8px;
+        display: inline-block;
+        max-width: 100%;
+        word-wrap: break-word;
     """
+
 
     col1, col2 = st.columns(2)
 
