@@ -51,107 +51,27 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
-    # Add vertical spacing after the title
     st.markdown("<div style='height:50px'></div>", unsafe_allow_html=True)
 
-    # Circle for Team QuantumTalk right after heading
-    circle_style = """
-        width: 160px;
-        height: 160px;
-        background: radial-gradient(circle at center, #12333A 0%, #0a2127 70%);
-        border-radius: 50%;
-        color: #E7D2CC;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 22px;
-        margin: 0 auto 40px auto;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-        text-align: center;
-        padding: 10px;
-        line-height: 1.2;
-    """
-    st.markdown(
-        f"<div style='max-width: 160px; margin: 0 auto;'>"
-        f"<div style='{circle_style}'>Team QuantumTalk</div>"
-        f"</div>",
-        unsafe_allow_html=True
+    # Combined description paragraph
+    description = (
+        "Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools. "
+        "This platform leverages historical data to understand stock behavior and uses machine learning models (LightGBM) to forecast "
+        "whether a company's stock is likely to go up, stay unchanged, or go down. With rich visualizations, stock-wise filtering, and an "
+        "interactive prediction interface, users can gain deeper insights into the market's rhythm. Whether you're a curious learner, a data "
+        "enthusiast, or a researcher, DeepMarket offers a compact yet powerful window into financial analytics. Built using Python, Streamlit, "
+        "Plotly, LightGBM, Pandas, and Seaborn, this project aims to bridge the gap between data science and financial decision-making."
     )
 
-    # Team members list
-    team_members = [
-        {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
-        {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
-        {"name": "Chowdhury Manjurul Hasan", "email": "cmhfahim@gmail.com"},
-        {"name": "Pijush Das", "email": "pijushdas123@gmail.com"},
-        {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
-    ]
-
-    # Smaller circles for members
-    member_circle_style = circle_style.replace("160px", "120px").replace("22px", "18px").replace("margin: 0 auto 40px auto;", "margin: 0 auto 10px auto;")
-
-    email_style = """
-        color: #241717;
-        font-size: 14px;
-        text-align: center;
-        margin-bottom: 30px;
-        padding: 6px 12px;
-        background-color: #e7d2cc;
-        border-radius: 8px;
-        display: inline-block;
-        max-width: 100%;
-        word-wrap: break-word;
-    """
-
-    col1, col2 = st.columns(2)
-
-    for i, member in enumerate(team_members[:4]):
-        with (col1 if i % 2 == 0 else col2):
-            st.markdown(
-                f"""
-                <div style="text-align:center; margin-bottom: 40px;">
-                    <div style="{member_circle_style}">{member['name']}</div>
-                    <div style="{email_style}">📧 {member['email']}</div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
-
-    # Fifth member centered below columns
     st.markdown(
         f"""
-        <div style="max-width: 120px; margin: 0 auto 40px auto; text-align:center;">
-            <div style="{member_circle_style}">{team_members[4]['name']}</div>
-            <div style="{email_style}">📧 {team_members[4]['email']}</div>
+        <div style="text-align: center; max-width: 900px; margin: 0 auto; color:#241717; font-size: 18px; line-height: 1.6;">
+            <p>{description}</p>
+            <h2 style='margin-top: 40px; color: #12333A; font-weight: bold;'>Team QuantumTalk</h2>
         </div>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
     )
-
-    # Add some vertical spacing before description
-    st.markdown("<div style='height:40px'></div>", unsafe_allow_html=True)
-
-    # New Description Section after team members
-    st.markdown("""
-        <div style="text-align: center; max-width: 900px; margin: 0 auto; color:#241717; font-size: 18px; line-height: 1.6;">
-            <p>
-                Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.
-            </p>
-            <p>
-                This platform leverages historical data to understand stock behavior and uses machine learning models (LightGBM) to forecast whether a company's stock is likely to go up, stay unchanged, or go down.
-            </p>
-            <p>
-                With rich visualizations, stock-wise filtering, and an interactive prediction interface, users can gain deeper insights into the market's rhythm.
-            </p>
-            <p>
-                Whether you're a curious learner, a data enthusiast, or a researcher, DeepMarket offers a compact yet powerful window into financial analytics.
-            </p>
-            <p>
-                Built using <strong>Python, Streamlit, Plotly, LightGBM, Pandas,</strong> and <strong>Seaborn</strong>, this project aims to bridge the gap between data science and financial decision-making.
-            </p>
-        </div>
-    """, unsafe_allow_html=True)
 
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
