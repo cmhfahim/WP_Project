@@ -111,19 +111,23 @@ if page == "🏠 Home":
     for i, member in enumerate(team_members[:4]):
         with (col1 if i % 2 == 0 else col2):
             st.markdown(
-                f"<div>"
-                f"<div style='{member_circle_style}'>{member['name']}</div>"
-                f"<div style='{email_style}'>📧 {member['email']}</div>"
-                f"</div>",
+                f"""
+                <div style="text-align:center; margin-bottom: 40px;">
+                    <div style="{member_circle_style}">{member['name']}</div>
+                    <div style="{email_style}">📧 {member['email']}</div>
+                </div>
+                """,
                 unsafe_allow_html=True
             )
 
     # Fifth member centered below columns
     st.markdown(
-        f"<div style='max-width: 120px; margin: 0 auto;'>"
-        f"<div style='{member_circle_style}'>{team_members[4]['name']}</div>"
-        f"<div style='{email_style}'>📧 {team_members[4]['email']}</div>"
-        f"</div>",
+        f"""
+        <div style="max-width: 120px; margin: 0 auto 40px auto; text-align:center;">
+            <div style="{member_circle_style}">{team_members[4]['name']}</div>
+            <div style="{email_style}">📧 {team_members[4]['email']}</div>
+        </div>
+        """,
         unsafe_allow_html=True
     )
 
