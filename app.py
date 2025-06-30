@@ -152,7 +152,10 @@ if page == "🏠 Home":
             </p>
         </div>
     """, unsafe_allow_html=True)
-
+    st.markdown(
+        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
+        unsafe_allow_html=True
+    )
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
     st.markdown("## 📊 Data Visualization")
