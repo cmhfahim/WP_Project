@@ -309,7 +309,6 @@ elif page == "📘 Real Life Experience":
     st.markdown("---")
     st.markdown("### 📊 Classification Report")
 
-    # Create report DataFrame
     report_data = {
         "Label": ["-1 (Down)", "0 (No Change)", "1 (Up)"],
         "Precision": [0.86, 0.95, 0.89],
@@ -317,12 +316,13 @@ elif page == "📘 Real Life Experience":
         "F1-Score": [0.87, 0.92, 0.87]
     }
     report_df = pd.DataFrame(report_data)
-    st.dataframe(report_df.style.format("{:.2f}"), use_container_width=True)
+
+    # ✅ Use table instead of dataframe with styling
+    st.table(report_df.style.format("{:.2f}"))
 
     st.markdown("---")
     st.markdown("### 🔁 Confusion Matrix")
 
-    # Confusion matrix data
     confusion_matrix = pd.DataFrame(
         [[320, 10, 30],
          [8, 450, 32],
