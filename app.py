@@ -51,10 +51,7 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
-    # Add vertical spacing after the title
-    st.markdown("<div style='height:50px'></div>", unsafe_allow_html=True)
-
-    # New Description Section after team members
+    # ✅ Description section directly after title
     st.markdown("""
         <div style="text-align: center; max-width: 900px; margin: 0 auto; color:#241717; font-size: 18px; line-height: 1.6;">
             <h2>🌐 Description</h2>
@@ -63,8 +60,11 @@ if page == "🏠 Home":
             </p>
         </div>
     """, unsafe_allow_html=True)
-    
-    # Circle for Team QuantumTalk right after heading
+
+    # Add vertical spacing before team
+    st.markdown("<div style='height:50px'></div>", unsafe_allow_html=True)
+
+    # ✅ Team name circle
     circle_style = """
         width: 160px;
         height: 160px;
@@ -89,7 +89,7 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
-    # Team members list
+    # ✅ Team member list stays the same below
     team_members = [
         {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
         {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
@@ -98,7 +98,6 @@ if page == "🏠 Home":
         {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
     ]
 
-    # Smaller circles for members
     member_circle_style = circle_style.replace("160px", "120px").replace("22px", "18px").replace("margin: 0 auto 40px auto;", "margin: 0 auto 10px auto;")
 
     email_style = """
@@ -128,7 +127,6 @@ if page == "🏠 Home":
                 unsafe_allow_html=True
             )
 
-    # Fifth member centered below columns
     st.markdown(
         f"""
         <div style="max-width: 120px; margin: 0 auto 40px auto; text-align:center;">
@@ -139,9 +137,7 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
-    # Add some vertical spacing before description
-    st.markdown("<div style='height:40px'></div>", unsafe_allow_html=True)
-
+    # Final footer line
     st.markdown(
         "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>QuantumTalk</strong></p>",
         unsafe_allow_html=True
