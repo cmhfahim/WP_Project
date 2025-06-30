@@ -54,59 +54,57 @@ if page == "🏠 Home":
     st.markdown("---")
     st.markdown("### 👨‍💻 Our Team")
 
-    # Modern Grid Layout for Team Members
     # ---- Team Section ----
-team_members = [
-    {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
-    {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
-    {"name": "Chowdhury Manjurul Hasan", "email": "cmhfahim@gmail.com"},
-    {"name": "Pijush Das", "email": "pijushdas123@gmail.com"},
-    {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
-]
+    team_members = [
+        {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
+        {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
+        {"name": "Chowdhury Manjurul Hasan", "email": "cmhfahim@gmail.com"},
+        {"name": "Pijush Das", "email": "pijushdas123@gmail.com"},
+        {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
+    ]
 
-team_html = """
-<style>
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    justify-items: center;
-}
-.card {
-    background: linear-gradient(135deg, #12333A, #0F4C75);
-    padding: 15px 20px;
-    border-radius: 12px;
-    color: #E7D2CC;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    transition: transform 0.2s;
-}
-.card:hover {
-    transform: scale(1.05);
-}
-</style>
-<div class="team-grid">
-"""
-
-for member in team_members:
-    team_html += f"""
-    <div class="card">
-        <strong>{member['name']}</strong><br>📧 {member['email']}
-    </div>
+    team_html = """
+    <style>
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        padding: 20px;
+        justify-items: center;
+    }
+    .card {
+        background: linear-gradient(135deg, #12333A, #0F4C75);
+        padding: 15px 20px;
+        border-radius: 12px;
+        color: #E7D2CC;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+    </style>
+    <div class="team-grid">
     """
 
-team_html += "</div>"
+    for member in team_members:
+        team_html += f"""
+        <div class="card">
+            <strong>{member['name']}</strong><br>📧 {member['email']}
+        </div>
+        """
 
-st.markdown(team_html, unsafe_allow_html=True)
+    team_html += "</div>"
 
-st.markdown(
-    "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
-    unsafe_allow_html=True
-)
+    st.markdown(team_html, unsafe_allow_html=True)
 
+    st.markdown(
+        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>",
+        unsafe_allow_html=True
+    )
 
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
