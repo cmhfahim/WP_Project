@@ -145,7 +145,6 @@ elif page == "📌 Prediction":
 
     st.markdown("Enter the feature values below:")
 
-    # Get user inputs
     company_name = st.selectbox("Select company", sorted(enc_dict.keys()))
     company_id = enc_dict[company_name]
 
