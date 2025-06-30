@@ -62,7 +62,7 @@ if page == "🏠 Home":
             </p>
         </div>
 
-        <div style='height:0px;'></div>
+        <div style='height:90px;'></div>
     """, unsafe_allow_html=True)
 
     # ✅ Team name circle
