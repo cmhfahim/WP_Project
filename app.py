@@ -92,17 +92,17 @@ if page == "🏠 Home":
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown(member_card("Atkia Mona Rahi", "Team Lead & Analyst", "atkiamona.rahi2003@gmail.com"), unsafe_allow_html=True)
-        st.markdown(member_card("Chowdhury Manjurul Hasan", "Data Engineer", "cmhfahim@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Atkia Mona Rahi", "atkiamona.rahi2003@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Chowdhury Manjurul Hasan", "cmhfahim@gmail.com"), unsafe_allow_html=True)
 
     with col2:
-        st.markdown(member_card("Abu Zafor Mohammad Saleh", "Web Developer", "abuzaforsaleh11@gmail.com"), unsafe_allow_html=True)
-        st.markdown(member_card("Pijush Das", "ML Engineer", "pijushdas123@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Abu Zafor Mohammad Saleh", "abuzaforsaleh11@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Pijush Das", "pijushdas123@gmail.com"), unsafe_allow_html=True)
 
     # Centered last member
     centered_col1, centered_col2, centered_col3 = st.columns([1, 2, 1])
     with centered_col2:
-        st.markdown(member_card("Shafayat Hossain Ornob", "UI Designer", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Shafayat Hossain Ornob", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
 
     # Footer
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
