@@ -341,9 +341,7 @@ elif page == "📘 Real Life Experience":
     st.markdown("<h3 style='color:black;'>🔁 Confusion Matrix</h3>", unsafe_allow_html=True)
 
     confusion_matrix = pd.DataFrame(
-        [[320, 10, 30],
-         [8, 450, 32],
-         [25, 35, 310]],
+        [[2267, 71, 213],[57, 3189, 227],[177, 248, 2192]]
         columns=["Pred: -1", "Pred: 0", "Pred: 1"],
         index=["Actual: -1", "Actual: 0", "Actual: 1"]
     )
