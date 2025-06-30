@@ -41,6 +41,8 @@ model = joblib.load("lgbm_model.pkl")
 st.sidebar.title("📂 Navigation")
 page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Prediction", "🚀 Project Journey"])
 
+#HOME---------
+
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
@@ -51,7 +53,7 @@ if page == "🏠 Home":
 
     st.markdown("---")
 
-    # ✅ Description section with spacing before and after
+    # Description with spacing
     st.markdown("""
         <div style='height:40px;'></div>
 
@@ -62,87 +64,31 @@ if page == "🏠 Home":
             </p>
         </div>
 
-        <div style='height:90px;'></div>
+        <div style='height:60px;'></div>
     """, unsafe_allow_html=True)
 
-    # ✅ Team name circle
-    circle_style = """
-        width: 160px;
-        height: 160px;
-        background: radial-gradient(circle at center, #12333A 0%, #0a2127 70%);
-        border-radius: 50%;
-        color: #E7D2CC;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 22px;
-        margin: 0 auto 40px auto;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-        text-align: center;
-        padding: 10px;
-        line-height: 1.2;
-    """
-    st.markdown(
-        f"<div style='max-width: 160px; margin: 0 auto;'>"
-        f"<div style='{circle_style}'>Team QuantumTalk</div>"
-        f"</div>",
-        unsafe_allow_html=True
-    )
+    # Team section title
+    st.markdown("<h2 style='text-align:center;'>👥 Team Members</h2>", unsafe_allow_html=True)
+    st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
 
-    # ✅ Team member list
-    team_members = [
-        {"name": "Atkia Mona Rahi", "email": "atkiamona.rahi2003@gmail.com"},
-        {"name": "Abu Zafor Mohammad Saleh", "email": "abuzaforsaleh11@gmail.com"},
-        {"name": "Chowdhury Manjurul Hasan", "email": "cmhfahim@gmail.com"},
-        {"name": "Pijush Das", "email": "pijushdas123@gmail.com"},
-        {"name": "Shafayat Hossain Ornob", "email": "ornobhossain121@gmail.com"},
-    ]
-
-    member_circle_style = circle_style.replace("160px", "120px").replace("22px", "18px").replace("margin: 0 auto 40px auto;", "margin: 0 auto 10px auto;")
-
-    email_style = """
-        color: #241717;
-        font-size: 14px;
-        text-align: center;
-        margin-bottom: 30px;
-        padding: 6px 12px;
-        background-color: #e7d2cc;
-        border-radius: 8px;
-        display: inline-block;
-        max-width: 100%;
-        word-wrap: break-word;
-    """
-
+    # Team members: 2 columns
     col1, col2 = st.columns(2)
 
-    for i, member in enumerate(team_members[:4]):
-        with (col1 if i % 2 == 0 else col2):
-            st.markdown(
-                f"""
-                <div style="text-align:center; margin-bottom: 40px;">
-                    <div style="{member_circle_style}">{member['name']}</div>
-                    <div style="{email_style}">📧 {member['email']}</div>
-                </div>
-                """,
-                unsafe_allow_html=True
-            )
+    with col1:
+        st.success("**Atkia Mona Rahi**\n\nTeam Lead & Analyst\n\n📧 atkiamona.rahi2003@gmail.com")
+        st.success("**Chowdhury Manjurul Hasan**\n\nData Engineer\n\n📧 cmhfahim@gmail.com")
 
-    st.markdown(
-        f"""
-        <div style="max-width: 120px; margin: 0 auto 40px auto; text-align:center;">
-            <div style="{member_circle_style}">{team_members[4]['name']}</div>
-            <div style="{email_style}">📧 {team_members[4]['email']}</div>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    with col2:
+        st.success("**Abu Zafor Mohammad Saleh**\n\nWeb Developer\n\n📧 abuzaforsaleh11@gmail.com")
+        st.success("**Pijush Das**\n\nML Engineer\n\n📧 pijushdas123@gmail.com")
 
-    # Final footer line
-    st.markdown(
-        "<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>QuantumTalk</strong></p>",
-        unsafe_allow_html=True
-    )
+    # Centered last member
+    centered_col1, centered_col2, centered_col3 = st.columns([1, 2, 1])
+    with centered_col2:
+        st.success("**Shafayat Hossain Ornob**\n\nUI Designer\n\n📧 ornobhossain121@gmail.com")
+
+    # Footer credit
+    st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
 # ---- Visualization Page ----
 elif page == "📊 Visualization":
     st.markdown("## 📊 Data Visualization")
