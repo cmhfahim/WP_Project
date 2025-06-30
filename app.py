@@ -295,11 +295,11 @@ elif page == "🚀 Project Journey":
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
 
 elif page == "📝 Feedback":
-    st.markdown("<h2 style='text-align:center; font-size:36px; color:#111111;'>📝 Feedback</h2>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:white;'>📝 Feedback</h2>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
     st.markdown("""
-        <div style="text-align: center; font-size: 18px; color: #333;">
+        <div style="text-align: center; font-size: 18px; color:black;">
             We value your thoughts and suggestions! Please fill out the form below to share your feedback.
         </div>
         <br>
