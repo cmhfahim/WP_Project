@@ -295,19 +295,26 @@ elif page == "🚀 Project Journey":
         st.markdown(f"<p style='text-align:center; margin-top:10px;'>Step {st.session_state.img_index + 1} of {len(image_files)}</p>", unsafe_allow_html=True)
 
 elif page == "📘 Real Life Experience":
-    st.markdown("<h2 style='text-align:center; font-size:36px; color:#111111;'>📘 Real Life Experience</h2>", unsafe_allow_html=True)
+    # White colored main heading
+    st.markdown("<h2 style='text-align:center; font-size:36px; color:white;'>📘 Real Life Experience</h2>", unsafe_allow_html=True)
     st.markdown("<br>", unsafe_allow_html=True)
 
-    st.markdown("### 🎯 Model Performance")
+    # Black text content
     st.markdown("""
-    - **Accuracy**: 0.8809  
-    - **F1 Score**: 0.8804  
-    - **Precision**: 0.8937  
-    - **Recall**: 0.8911
-    """)
+        <div style='color:black; font-size:18px;'>
+            <h3>🎯 Model Performance</h3>
+            <ul>
+                <li><strong>Accuracy</strong>: 0.8809</li>
+                <li><strong>F1 Score</strong>: 0.8804</li>
+                <li><strong>Precision</strong>: 0.8937</li>
+                <li><strong>Recall</strong>: 0.8911</li>
+            </ul>
+        </div>
+    """, unsafe_allow_html=True)
 
-    st.markdown("---")
-    st.markdown("### 📊 Classification Report")
+    st.markdown("<hr style='border-top: 1px solid #ccc;'>", unsafe_allow_html=True)
+
+    st.markdown("<h3 style='color:black;'>📊 Classification Report</h3>", unsafe_allow_html=True)
 
     report_data = {
         "Label": ["-1 (Down)", "0 (No Change)", "1 (Up)"],
@@ -317,11 +324,10 @@ elif page == "📘 Real Life Experience":
     }
     report_df = pd.DataFrame(report_data)
 
-    # ✅ No styling, just rounded values
-    st.table(report_df.round(2))
+    st.table(report_df.round(2))  # Plain table with black text
 
-    st.markdown("---")
-    st.markdown("### 🔁 Confusion Matrix")
+    st.markdown("<hr style='border-top: 1px solid #ccc;'>", unsafe_allow_html=True)
+    st.markdown("<h3 style='color:black;'>🔁 Confusion Matrix</h3>", unsafe_allow_html=True)
 
     confusion_matrix = pd.DataFrame(
         [[320, 10, 30],
@@ -339,6 +345,7 @@ elif page == "📘 Real Life Experience":
         title="Confusion Matrix"
     )
     st.plotly_chart(fig_cm, use_container_width=True)
+
 
 
 elif page == "📝 Feedback":
