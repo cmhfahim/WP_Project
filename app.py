@@ -43,7 +43,8 @@ page = st.sidebar.radio("Go to", ["🏠 Home", "📊 Visualization", "📌 Predi
 if page == "🏠 Home":
     st.markdown("""
         <div style="text-align: center;">
-            <h1 style='color:#102542; font-size: 60px;'>DeepMarket</h1>
+            <h1 style='color:black;'>📈 DeepMarket</h1>
+            #<h1 style='color:#102542; font-size: 60px;'>DeepMarket</h1>
             <h3 style='color:#1b1f3a; font-size: 28px;'>Dhaka Stock Market Analysis and Price Prediction</h3>
             <p style='font-size:20px; color:#333333;'>
                 Explore trends, visualize insights, and predict future movement of stocks from Dhaka Stock Exchange using interactive tools.
