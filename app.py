@@ -110,7 +110,7 @@ if page == "🏠 Home":
     col1, col2 = st.columns(2)
 
     with col1:
-        
+        st.markdown(member_card("Atkia Mona Rahi", "atkiamona.rahi2003@gmail.com"), unsafe_allow_html=True)
         st.markdown(member_card("Chowdhury Manjurul Hasan", "cmhfahim@gmail.com"), unsafe_allow_html=True)
         st.markdown(member_card("Shafayat Hossain Ornob", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
 
