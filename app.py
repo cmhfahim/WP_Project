@@ -111,33 +111,19 @@ if page == "🏠 Home":
 
     with col1:
         st.markdown(member_card("Atkia Mona Rahi", "atkiamona.rahi2003@gmail.com"), unsafe_allow_html=True)
-        st.markdown(member_card("Pijush Das", "pijushdas123@gmail.com"), unsafe_allow_html=True)
+        st.markdown(member_card("Shafayat Hossain Ornob", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
 
     with col2:
         st.markdown(member_card("Abu Zafor Mohammad Saleh", "abuzaforsaleh11@gmail.com"), unsafe_allow_html=True)
         st.markdown(member_card("Chowdhury Manjurul Hasan", "cmhfahim@gmail.com"), unsafe_allow_html=True)
 
-    # Spacer before centering the fifth member
-    st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
+    # Spacer before the last member
+    st.markdown("<div style='height:20px;'></div>", unsafe_allow_html=True)
 
-    # Center the 5th member
-    st.markdown("""
-        <div style='display: flex; justify-content: center;'>
-            <div style='width: 300px;'>
-                <div style="
-                    background-color: #14252b;
-                    color: white;
-                    border-radius: 10px;
-                    padding: 15px 20px;
-                    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-                    text-align: center;
-                ">
-                    <strong style='font-size:18px;'>Shafayat Hossain Ornob</strong><br>
-                    📧 <a href='mailto:ornobhossain121@gmail.com' style='color:#dddddd;'>pijushdas123@gmail.com</a>
-                </div>
-            </div>
-        </div>
-    """, unsafe_allow_html=True)
+    # Center the 5th member using 3-column layout
+    col_left, col_center, col_right = st.columns([1, 2, 1])
+    with col_center:
+        st.markdown(member_card("Pijush Das", "pijushdas123@gmail.com"), unsafe_allow_html=True)
 
     # Footer
     st.markdown("<p style='text-align:center; margin-top:50px; color:black;'>💡 Built by <strong>Team QuantumTalk</strong></p>", unsafe_allow_html=True)
