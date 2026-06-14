@@ -10,15 +10,14 @@ import joblib
 import io
 import base64
 
-
-st.markdown("""
+hide_streamlit_elements = """
     <style>
-        #MainMenu {visibility: hidden;}
-        footer {visibility: hidden;}
-        header {visibility: hidden;}
+    header {visibility: hidden;}
+    footer {visibility: hidden;}
     </style>
 """
-st.set_page_config(page_title="DeepMarket", layout="wide")
+st.markdown(hide_streamlit_elements, unsafe_allow_html=True)
+
 
 st.markdown("""
 <style>
