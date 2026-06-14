@@ -20,6 +20,30 @@ st.markdown("""
 """, unsafe_allow_html=True)
 st.set_page_config(page_title="DeepMarket", layout="wide")
 
+st.markdown("""
+<style>
+/* Hide main menu */
+#MainMenu {
+    display: none;
+}
+
+/* Hide footer completely */
+footer {
+    display: none;
+}
+
+/* Hide Streamlit footer text */
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+/* Hide header */
+header {
+    display: none;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # ---- Custom Sidebar Font Size -----
 st.markdown("""
     <style>
