@@ -44,6 +44,13 @@ header {
 </style>
 """, unsafe_allow_html=True)
 
+hide_footer_style = """
+    <style>
+    footer {visibility: hidden;}
+    </style>
+"""
+st.markdown(hide_footer_style, unsafe_allow_html=True)
+
 # ---- Custom Sidebar Font Size -----
 st.markdown("""
     <style>
