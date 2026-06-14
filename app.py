@@ -113,15 +113,6 @@ if page == "Home":
         """
 
     # First 4 members in 2 columns
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown(member_card("Chowdhury Manjurul Hasan", "cmhfahim@gmail.com"), unsafe_allow_html=True)
-        st.markdown(member_card("Shafayat Hossain Ornob", "ornobhossain121@gmail.com"), unsafe_allow_html=True)
-
-    with col2:
-        st.markdown(member_card("Istiyak Hossain Ishan", "istyakishan@gmail.com"), unsafe_allow_html=True)
-        st.markdown(member_card("Shafi Sharar", "shafi211@gmail.com"), unsafe_allow_html=True)
 
     # Spacer before the last member
 
