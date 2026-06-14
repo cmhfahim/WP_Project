@@ -93,7 +93,7 @@ if page == "Home":
     """, unsafe_allow_html=True)
 
     # Team section title
-    st.markdown("<h2 style='text-align:center;'>Team Members</h2>", unsafe_allow_html=True)
+    #st.markdown("<h2 style='text-align:center;'>Team Members</h2>", unsafe_allow_html=True)
     st.markdown("<div style='height:30px;'></div>", unsafe_allow_html=True)
 
     # Member card HTML template
