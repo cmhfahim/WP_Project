@@ -18,6 +18,24 @@ hide_streamlit_elements = """
 """
 st.markdown(hide_streamlit_elements, unsafe_allow_html=True)
 
+hide_modern_streamlit = """
+    <style>
+    /* Target the modern container footer */
+    footer {visibility: hidden !important; height: 0px !important; display: none !important;}
+    
+    /* Target specific backend data-testids for the toolbar/footer */
+    div[data-testid="stToolbar"] {visibility: hidden !important; display: none !important;}
+    div[data-testid="stDecoration"] {visibility: hidden !important; display: none !important;}
+    div[data-testid="stStatusWidget"] {visibility: hidden !important; display: none !important;}
+    
+    /* Hide top header bar completely */
+    header {visibility: hidden !important; display: none !important;}
+    
+    /* Remove any forced padding left behind by the hidden elements */
+    .stAppDeployButton {display: none !important;}
+    </style>
+"""
+st.markdown(hide_modern_streamlit, unsafe_allow_html=True)
 
 
 
