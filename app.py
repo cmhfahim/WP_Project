@@ -17,7 +17,7 @@ st.markdown("""
         footer {visibility: hidden;}
         header {visibility: hidden;}
     </style>
-""", unsafe_allow_html=True)
+"""
 st.set_page_config(page_title="DeepMarket", layout="wide")
 
 st.markdown("""
