@@ -19,36 +19,7 @@ hide_streamlit_elements = """
 st.markdown(hide_streamlit_elements, unsafe_allow_html=True)
 
 
-st.markdown("""
-<style>
-/* Hide main menu */
-#MainMenu {
-    display: none;
-}
 
-/* Hide footer completely */
-footer {
-    display: none;
-}
-
-/* Hide Streamlit footer text */
-[data-testid="stDecoration"] {
-    display: none;
-}
-
-/* Hide header */
-header {
-    display: none;
-}
-</style>
-""", unsafe_allow_html=True)
-
-hide_footer_style = """
-    <style>
-    footer {visibility: hidden;}
-    </style>
-"""
-st.markdown(hide_footer_style, unsafe_allow_html=True)
 
 # ---- Custom Sidebar Font Size -----
 st.markdown("""
